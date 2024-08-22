@@ -35,5 +35,6 @@ public class TodoService {
 
     public void deleteTodos(Long id) {
         Todo todo = todoRepository.findById(id).orElseThrow( () -> new RuntimeException("todo not found"));
+        todoRepository.deleteById(id);
     }
 }
